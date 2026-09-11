@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project 2 - Infra Stack</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+            background: #1a1a2e;
+            color: #00ff88;
+        }
+        h1 { font-size: 3rem; }
+        .highlight { color: #ff6b6b; }
+        .sub { color: #aaa; margin-top: 30px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .badge {
+            display: inline-block;
+            background: #2a2a4e;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚙️ Project 2: <span class="highlight">Infra Queue B</span></h1>
+        <p>Containerized with Docker • Deployed with Terraform</p>
+        <div>
+            <span class="badge">🐳 Docker</span>
+            <span class="badge">☁️ AWS</span>
+            <span class="badge">🔧 Terraform</span>
+            <span class="badge">📊 Prometheus</span>
+        </div>
+        <p class="sub">🔥 Ready for EKS + Prometheus + Grafana</p>
+        <p>Visits: <span id="counter">0</span></p>
+    </div>
+    <script>
+        let count = localStorage.getItem('visits') || 0;
+        count++;
+        localStorage.setItem('visits', count);
+        document.getElementById('counter').textContent = count;
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2-infra-deployment
+  labels:
+    app: project2-infra
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: project2-infra
+  template:
+    metadata:
+      labels:
+        app: project2-infra
+    spec:
+      containers:
+      - name: project2-infra-container
+        image: project2-infra:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
